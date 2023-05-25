@@ -64,11 +64,27 @@ p largest_contiguous_subsum(list) # => 8
 
 def largest_contiguous_subsum1(list)
 
+    max = 0 
 
+    curr = 0 
+
+    i = 0 
+
+    until i == list.length
+
+        curr += list[i] 
+       max = curr if curr > max 
+       curr = 0 if curr < 0 
+       i += 1 
+       
+    end 
+
+    max 
 
 end 
 
 
 
-list = [5, 3, -7]
+# list = [5, 3, -7]
+list = [-1,7,5,-1,8,-100,90]
 p largest_contiguous_subsum1(list) # => 8
